@@ -1,7 +1,21 @@
-﻿namespace Mirrack.ViewModels
+﻿using ReactiveUI;
+using System.ComponentModel;
+
+namespace Mirrack.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : ReactiveObject
     {
-        public string Greeting { get; } = "Welcome to Avalonia!";
+        private string _greeting = "hello world!";
+        public string Greeting {
+            get => _greeting;
+            set {
+                this.RaiseAndSetIfChanged(ref _greeting, value);
+            }
+        }
+
+        public void ButtonOnClick() 
+        {
+            Greeting = "clicked";
+        }
     }
 }
