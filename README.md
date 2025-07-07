@@ -4,6 +4,12 @@ The name **Mirrack** is a combination of the words **mirror** and **hack** and r
 
 The project includes a custom Arch Linux ISO for a hassle free, keyboard free setup, allowing users to turn an outdated device into an interactive home assistant with minimal effort and cost.
 
+## 🚧This Project is under development and is not yet complete.🚧
+
+Stay tuned for updates on the project! It is currently scheduled to have a full version on 8/12/25
+
+If you are interested in buying a kit or supporting the project, email me at contact@mirrack.xyz This project is for a class and currently needs a company or individual to support and help grade it so feel free to reach out!
+
 ### --- Features ---
 - 🌟 Interactivity! (control mirror with buttons and voice)
 - 📆 Google Calendar integration (view, add, edit events)
@@ -20,4 +26,8 @@ Too many cloud-based laptops end up as e-waste. Mirrack aims to give them a seco
 ---
 
 **Get started, contribute, or build your own.**  
-Make something beautiful with the tech you already have.
+Visit https://Mirrack.xyz for more information on the project, links to buy kits, and directions to make your own. (coming soon!)
+
+Happy Hacking!
+
+Mirrack 2025
