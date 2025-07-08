@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="1920"
+		Width="540" Height="960"
         x:Class="Mirrack.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -16,7 +17,7 @@
     </Design.DataContext>
 
 	<Grid RowDefinitions="1*, 3*, 1*">
-		<Grid  ColumnDefinitions="*,*,*">
+		<Grid  ColumnDefinitions="* * *">
 			<Rectangle Fill="orange" Grid.Column="0"></Rectangle>
 			<Rectangle Fill="purple" Grid.Column="1"></Rectangle>
 			<Rectangle Fill="Green" Grid.Column="2"></Rectangle>
