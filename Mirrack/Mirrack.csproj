@@ -24,4 +24,10 @@
     </PackageReference>
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.2" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\DemoView.axaml.cs">
+      <DependentUpon>DemoView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

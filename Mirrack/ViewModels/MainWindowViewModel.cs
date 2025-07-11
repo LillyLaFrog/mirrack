@@ -1,4 +1,5 @@
-﻿using ReactiveUI;
+﻿using Mirrack.Models;
+using ReactiveUI;
 using System.ComponentModel;
 
 namespace Mirrack.ViewModels
@@ -11,11 +12,6 @@ namespace Mirrack.ViewModels
             set {
                 this.RaiseAndSetIfChanged(ref _greeting, value);
             }
-        }
-
-        public void ButtonOnClick() 
-        {
-            Greeting = "clicked";
         }
     }
 }
