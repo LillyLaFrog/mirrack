@@ -16,7 +16,13 @@ namespace Mirrack.ViewModels
 
         private DemoModel _demoModel = new DemoModel();
 
-        public DemoModel demoModel { get { return _demoModel; } set => this.RaiseAndSetIfChanged(ref _demoModel, value); }
+
+        public string Message { get { return _demoModel.message; } set 
+            { 
+                string _message = _demoModel.message;
+                this.RaiseAndSetIfChanged(ref _message, value);
+            } 
+        }
 
     }
 }
