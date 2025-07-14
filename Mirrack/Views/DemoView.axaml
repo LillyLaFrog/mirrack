@@ -9,7 +9,7 @@
 
 	<Grid>
 		<Rectangle Fill="Pink"></Rectangle>
-		<Label Content="{Binding demoModel.message}" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+		<Label Content="{Binding Message}" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
 	</Grid>
 
 

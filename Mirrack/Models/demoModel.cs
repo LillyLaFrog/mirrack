@@ -27,7 +27,7 @@ namespace Mirrack.Models
         public int scrollLocation { get => _scrollLocation; set => _scrollLocation = value; }
 
 
-        string _message = "hello world";
+        string _message = "Hello World";
         public string message { get => _message; set => _message = value; }
 
         private void OnKeyDown(object? sender, KeyEventArgs e)
