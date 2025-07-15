@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="1200" Background="Black"
+             x:Class="Mirrack.Views.DemoModule.DemoContentView">
+	<StackPanel Margin="0,100" Spacing="24">
+		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 1</Label>
+		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 2</Label>
+		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 3</Label>
+		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 4</Label>
+		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 5</Label>
+		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 6</Label>
+	</StackPanel>
+</UserControl>

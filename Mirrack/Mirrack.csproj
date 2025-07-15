@@ -26,6 +26,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\DemoModule\DemoROptionView.axaml.cs">
+      <DependentUpon>DemoROptionView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DemoModule\DemoLOptionView.axaml.cs">
+      <DependentUpon>DemoLOptionView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DemoModule\DemoIconView.axaml.cs">
+      <DependentUpon>DemoIconView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DemoModule\DemoScrollView.axaml.cs">
+      <DependentUpon>DemoScrollView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DemoModule\DemoContentView.axaml.cs">
+      <DependentUpon>DemoContentView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DemoView.axaml.cs">
       <DependentUpon>DemoView.axaml</DependentUpon>
     </Compile>

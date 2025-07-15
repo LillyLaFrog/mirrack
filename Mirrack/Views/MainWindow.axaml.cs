@@ -14,6 +14,7 @@ namespace Mirrack.Views
         public MainWindow()
         {
             InitializeComponent();
+            //handle input here
             this.PointerWheelChanged += onPointerWheel;
             this.KeyDown += onKeyDown;
             this.KeyUp += onKeyUp;
@@ -25,6 +26,7 @@ namespace Mirrack.Views
             args.Handled = true;
         }
 
+        //mark time to check how long btn press was when released
         private bool _keyDown = false;
         private DateTime timePressed;
         public void onKeyDown(object? sender, KeyEventArgs args)
@@ -37,12 +39,13 @@ namespace Mirrack.Views
                 args.Handled = true;
         }
 
+        //use keyDown time to check if button was pressed or held
         public void onKeyUp(object? sender, KeyEventArgs args) 
         {
             int HoldDelay = 500;
             _keyDown = false;
             //if held for longer than hold delay
-            if (DateTime.Now - timePressed > new TimeSpan(0,0,0,0,HoldDelay))
+            if (DateTime.Now - timePressed > TimeSpan.FromMilliseconds(HoldDelay))
             {
                 //key held
                 InputService.RaiseKey(args.Key, true);

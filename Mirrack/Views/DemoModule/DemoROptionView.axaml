@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="360"
+			 Background="Black"
+             x:Class="Mirrack.Views.DemoModule.DemoROptionView">
+
+	<Grid ColumnDefinitions="*,10">
+		<Rectangle Grid.Column="1" Fill="Teal" Width="10"></Rectangle>
+		<StackPanel Grid.Column="0">
+			<TextBlock HorizontalAlignment="Right" TextAlignment="Right" TextWrapping="Wrap" Foreground="White" Margin="20" FontSize="60">Right Option</TextBlock>
+			<TextBlock HorizontalAlignment="Right" TextAlignment="Right" TextWrapping="Wrap" Foreground="White" Margin="20" FontSize="30">Right Option (Hold)</TextBlock>
+		</StackPanel>
+	</Grid>
+</UserControl>

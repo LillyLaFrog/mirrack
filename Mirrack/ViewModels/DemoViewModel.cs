@@ -26,7 +26,7 @@ namespace Mirrack.ViewModels
 
         private DemoModel _demoModel = new DemoModel();
 
-        int _message = 2;
+        int _message = 1;
         public int Message { get { return _message; } set 
             { 
                 this.RaiseAndSetIfChanged(ref _message, value);
