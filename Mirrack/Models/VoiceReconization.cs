@@ -1,52 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 using Vosk;
-using System.Diagnostics;
-using SoundFlow;
 using SoundFlow.Abstracts;
 using SoundFlow.Backends.MiniAudio;
 using SoundFlow.Enums;
 using SoundFlow.Components;
 using System.IO;
 using WebRtcVadSharp;
-using SkiaSharp;
 
 namespace Mirrack.Models
 {
     internal class VoiceReconization
     {
-        public string RecordSpeech()
+        public string Transcribe()
         {
             //records the microphone and stops when no voice is heard
-            bool recording = true;
             AudioEngine audioEngine = new MiniAudioEngine(16000, Capability.Record);
-            string outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "output.wav");
-            using var fileStream = new FileStream(outputFilePath, FileMode.Create, FileAccess.Write, FileShare.None);
-            byte[] frame = [1, 0, 0, 0, 1, 1, 0];
             WebRtcVad vad = new WebRtcVad();
-            while (recording)
+            vad.FrameLength = FrameLength.Is20ms;
+            vad.SampleRate = SampleRate.Is16kHz;
+
+            List<byte[]> recordedFrames = new();
+
+
+            var stream = new MemoryStream();
+            var recorder = new Recorder(stream, SampleFormat.F32, EncodingFormat.Wav, 16000, 1);
+
+            //given a stream, vosk will transcribe speech
+            using VoskRecognizer recognizer = new VoskRecognizer(new Model("model"), 16000.0f);
+            recognizer.SetMaxAlternatives(0);
+            recognizer.SetWords(true);
+
+
+            byte[] buffer = new byte[320];
+            int bytesRead;
+            string result = "";
+            int silentFrames = 0;
+            while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                if (!vad.HasSpeech(frame)) 
+                if(recognizer.AcceptWaveform(buffer, bytesRead))
                 {
-                    
+                    result = recognizer.Result();
+                } else
+                {
+                    result = recognizer.PartialResult();
+                }
+                if (!vad.HasSpeech(buffer)) 
+                {
+                    silentFrames++;
+                    if (silentFrames > 100)
+                    {
+                        break;
+                    }
                 }
             }
-            
-            
-            
-            vad.HasSpeech(frame);
 
-            return outputFilePath;
-        }
-        public string Transcribe(string recordingPath)
-        {
-            //given a recording, vosk will transcribe speech
-            VoskRecognizer recognizer = new VoskRecognizer(new Model("model"), 16000.0f);
-            return "todo";
+            return result;
         }
     }
 }
