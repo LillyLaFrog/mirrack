@@ -15,7 +15,7 @@ namespace Mirrack.Models
         public string Transcribe()
         {
             //records the microphone and stops when no voice is heard
-            AudioEngine audioEngine = new MiniAudioEngine(16000, Capability.Record);
+            //AudioEngine audioEngine = new MiniAudioEngine(16000, Capability.Record); todo: fix syntax for soundflow 1.2.0
             WebRtcVad vad = new WebRtcVad();
             vad.FrameLength = FrameLength.Is20ms;
             vad.SampleRate = SampleRate.Is16kHz;
@@ -24,7 +24,7 @@ namespace Mirrack.Models
 
 
             var stream = new MemoryStream();
-            var recorder = new Recorder(stream, SampleFormat.F32, EncodingFormat.Wav, 16000, 1);
+            //var recorder = new Recorder(stream, SampleFormat.F32, EncodingFormat.Wav, 16000, 1);
 
             //given a stream, vosk will transcribe speech
             using VoskRecognizer recognizer = new VoskRecognizer(new Model("model"), 16000.0f);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mirrack.ViewModels.DemoModule
 {
-    internal class DemoIconViewModel
+    internal class DemoIconViewModel : ViewModelBase
     {
     }
 }

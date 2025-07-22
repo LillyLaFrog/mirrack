@@ -21,15 +21,15 @@
 
 	<Grid RowDefinitions="1*, 3*, 1*">
 		<Grid ColumnDefinitions="* * *">
-			<demo:DemoIconView Name="Icon"/>
+			<ContentControl Content="{Binding IconVM}" Name="Icon"/>
 			<Label Grid.Column="1" Foreground="white" HorizontalAlignment="Center" FontSize="64" Margin="64">10:32</Label> <!--time placeholder-->
-			<demo:DemoScrollView Name="Scroll" Grid.Column="2"/>
+			<ContentControl Grid.Column="2" Content="{Binding ScrollVM}" Name="Scroll"/>
 		</Grid>
-		<demo:DemoContentView Name="Content" Grid.Row="1"/>
+		<ContentControl Grid.Row="1" Content="{Binding ContentVM}" Name="Content"/>
 		<Grid Grid.Row="2" ColumnDefinitions="*,*,*">
-			<demo:DemoLOptionView Name="LOption"/>
+			<ContentControl Content="{Binding LOptionVM}" Name="LOption"/>
 			<Rectangle Grid.Column="1"></Rectangle>
-			<demo:DemoROptionView Grid.Column="2" Name="ROption"/>
+			<ContentControl Grid.Column="2" Content="{Binding ROptionVM}" Name="ROption"/>
 		</Grid>
 	</Grid>
 	
