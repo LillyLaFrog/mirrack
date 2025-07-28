@@ -22,7 +22,10 @@
 	<Grid RowDefinitions="1*, 3*, 1*">
 		<Grid ColumnDefinitions="* * *">
 			<ContentControl Content="{Binding IconVM}" Name="Icon"/>
-			<Label Grid.Column="1" Foreground="white" HorizontalAlignment="Center" FontSize="64" Margin="64">10:32</Label> <!--time placeholder-->
+			<StackPanel Grid.Column="1">
+				<Label Foreground="white" HorizontalAlignment="Center" FontSize="64" Margin="20,60,20,0" Content="{Binding Time}"/>
+				<TextBlock TextWrapping="Wrap" TextAlignment="Center" Foreground="White" HorizontalAlignment="Center" FontSize="32" Margin="20,0" Text="{Binding Date}"/>
+			</StackPanel>
 			<ContentControl Grid.Column="2" Content="{Binding ScrollVM}" Name="Scroll"/>
 		</Grid>
 		<ContentControl Grid.Row="1" Content="{Binding ContentVM}" Name="Content"/>

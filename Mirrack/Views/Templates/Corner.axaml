@@ -2,12 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:templates="clr-namespace:Mirrack.Views.Templates"
              mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="360"
-			 Background="Black"
-             x:Class="Mirrack.Views.DemoModule.DemoIconView">
+             x:Class="Mirrack.Views.Templates.Corner">
 
-	<templates:Corner Testing="Hello World">
-	</templates:Corner>
-	<!--Image Source="/Assets/avalonia-logo.ico" MaxHeight="300" MaxWidth="300"></Image-->
+
+	<StackPanel Orientation="Horizontal">
+		<Rectangle Fill="Teal" Width="10"></Rectangle>
+		<TextBlock Foreground="Fuchsia" Text="{" />
+	</StackPanel>
+
 </UserControl>

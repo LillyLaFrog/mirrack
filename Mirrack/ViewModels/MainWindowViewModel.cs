@@ -1,14 +1,17 @@
-﻿using DynamicData.Binding;
+﻿using Avalonia.Threading;
+using DynamicData.Binding;
 using Mirrack.Models;
 using Mirrack.Services;
 using ReactiveUI;
+using Splat;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
-using Tmds.DBus.Protocol;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mirrack.ViewModels
 {
@@ -54,6 +57,7 @@ namespace Mirrack.ViewModels
                 new DemoModule.DemoROptionViewModel(),
                 ];
             _rOptionVM = rOptions[0];
+            new Task(keepTime).Start();
         }
 
         private void OnButtonPressed(Avalonia.Input.Key key, bool held)
@@ -70,6 +74,19 @@ namespace Mirrack.ViewModels
                 ROptionVM = rOptions[screenIndex];
             }
         }
+        private string _time = "";
+        private string _date = "";
+        private string getTime() => DateTime.Now.ToString("t");
+        private string getDate() => DateTime.Now.ToString("D");
+        private async void keepTime()
+        {
+            while (true)
+            {
+                await Dispatcher.UIThread.InvokeAsync(() => { Time = getTime(); Date = getDate(); });
+                await (Task.Delay(1000));
+            }
+        }
+        
         
         public ViewModelBase IconVM
         {
@@ -109,6 +126,24 @@ namespace Mirrack.ViewModels
             {
                 this.RaiseAndSetIfChanged(ref _rOptionVM, value);
                 _rOptionVM = value;
+            }
+        }
+        public string Time
+        {
+            get => _time;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _time, value);
+                _time = value;
+            }
+        }
+        public string Date
+        {
+            get => _date;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _date, value);
+                _date = value;
             }
         }
     }
