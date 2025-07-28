@@ -8,7 +8,7 @@ The project includes a custom Arch Linux ISO for a hassle free, keyboard free se
 
 Stay tuned for updates on the project! It is currently scheduled to have a full version on 8/12/25
 
-If you are interested in buying a kit or supporting the project, email me at contact@mirrack.xyz This project is for a class and currently needs a company or individual to support and help grade it so feel free to reach out!
+If you are interested in buying a kit or supporting the project, email me at contact@mirrack.xyz If you have any questions or suggestions feel free to reach out!
 
 ### --- Features ---
 - 🌟 Interactivity! (control mirror with buttons and voice)
