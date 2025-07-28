@@ -45,7 +45,7 @@ export default function Home() {
       <br/>
       <p>
         If you are interested in buying a kit or supporting the project, email me at 
-        <a href="mailto:contact@mirrack.xyz">contact@mirrack.xyz</a>. This project is for a class and currently needs a company or individual to support and help grade it — feel free to reach out!
+        <a href="mailto:contact@mirrack.xyz">contact@mirrack.xyz</a>. Have any more questions about this project? feel free to reach out!
       </p>
       <br/>
       <h3>Features</h3>
