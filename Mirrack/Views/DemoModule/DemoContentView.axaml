@@ -4,12 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="1200" Background="Black"
              x:Class="Mirrack.Views.DemoModule.DemoContentView">
-	<StackPanel Margin="0,100" Spacing="24">
+	<StackPanel VerticalAlignment="Center" Spacing="24">
 		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 1</Label>
 		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 2</Label>
 		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 3</Label>
 		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 4</Label>
 		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 5</Label>
-		<Label Foreground="White" HorizontalAlignment="Center" FontSize="80">List item 6</Label>
 	</StackPanel>
 </UserControl>

@@ -1,0 +1,32 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Mirrack.Controls">
+
+  <!--
+    Additional resources 
+    Using Control Themes:
+         https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
+    Using Theme Variants:
+         https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
+  -->
+  
+  <Design.PreviewWith>
+    <StackPanel>
+		<controls:LCorner>
+			<Label>test</Label>
+		</controls:LCorner>
+    </StackPanel>
+  </Design.PreviewWith>
+ 
+  <ControlTheme x:Key="{x:Type controls:LCorner}" TargetType="controls:LCorner">
+    <Setter Property="Template">
+      <ControlTemplate>
+		  <Grid ColumnDefinitions="10,*">
+			  <Rectangle Grid.Column="0" Fill="Teal" Width="10"></Rectangle>
+			   <ContentPresenter x:Name="PART_ContentPresenter" Content="{TemplateBinding Content}" Grid.Column="1" HorizontalAlignment="Left"/>
+		  </Grid>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+</ResourceDictionary>
+

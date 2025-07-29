@@ -29,6 +29,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Controls\ROption.axaml.cs">
+      <DependentUpon>ROption.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Controls\RCorner.axaml.cs">
+      <DependentUpon>RCorner.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Controls\LCorner.axaml.cs">
+      <DependentUpon>LCorner.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DemoModule\DemoROptionView.axaml.cs">
       <DependentUpon>DemoROptionView.axaml</DependentUpon>
     </Compile>
@@ -43,9 +52,6 @@
     </Compile>
     <Compile Update="Views\DemoModule\DemoContentView.axaml.cs">
       <DependentUpon>DemoContentView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Templates\corner.axaml.cs">
-      <DependentUpon>Corner.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
