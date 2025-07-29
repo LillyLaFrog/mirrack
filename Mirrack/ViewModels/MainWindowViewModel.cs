@@ -18,45 +18,43 @@ namespace Mirrack.ViewModels
     public class MainWindowViewModel : ReactiveObject
     {
         private int screenIndex = 0;
-        private List<ViewModelBase> icons;
+        private List<ViewModelBase> icons = [];
         private ViewModelBase _iconVM;
-        private List<ViewModelBase> scrolls;
+        private List<ViewModelBase> scrolls = [];
         private ViewModelBase _scrollVM;
-        private List<ViewModelBase> contents;
+        private List<ViewModelBase> contents = [];
         private ViewModelBase _contentVM;
-        private List<ViewModelBase> lOptions;
+        private List<ViewModelBase> lOptions = [];
         private ViewModelBase _lOptionVM;
-        private List<ViewModelBase> rOptions;
+        private List<ViewModelBase> rOptions = [];
         private ViewModelBase _rOptionVM;
 
         public MainWindowViewModel()
         {
             InputService.KeyInput += OnButtonPressed;
-             icons =
+
+            List<IModuleDefinition> modules =
                 [
-                new DemoModule.DemoIconViewModel(),
+                new DemoModule.DemoDefinition(),
+                new DemoModule.DemoDemoDefinition(),
                 ];
+
+            foreach(IModuleDefinition module in modules)
+            {
+                icons.Add(module.CreateIconVM());
+                scrolls.Add(module.CreateScrollVM());
+                contents.Add(module.CreateContentVM());
+                lOptions.Add(module.CreateLOptionVM());
+                rOptions.Add(module.CreateROptionVM());
+            }
             _iconVM = icons[0];
-            scrolls = 
-                [
-                new DemoModule.DemoScrollViewModel(),
-                ];
             _scrollVM = scrolls[0];
-            contents = 
-                [
-                new DemoModule.DemoContentViewModel(),
-                ];
             _contentVM = contents[0];
-            lOptions = 
-                [
-                new DemoModule.DemoLOptionViewModel(),
-                ];
             _lOptionVM = lOptions[0];
-            rOptions =
-                [
-                new DemoModule.DemoROptionViewModel(),
-                ];
             _rOptionVM = rOptions[0];
+
+
+
             new Task(keepTime).Start();
         }
 
