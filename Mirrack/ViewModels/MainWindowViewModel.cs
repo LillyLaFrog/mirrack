@@ -36,7 +36,6 @@ namespace Mirrack.ViewModels
             List<IModuleDefinition> modules =
                 [
                 new DemoModule.DemoDefinition(),
-                new DemoModule.DemoDemoDefinition(),
                 ];
 
             foreach(IModuleDefinition module in modules)
