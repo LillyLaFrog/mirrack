@@ -17,22 +17,24 @@ namespace Mirrack.ViewModels
 {
     public class MainWindowViewModel : ReactiveObject
     {
-        private int screenIndex = 0;
+        //create lists and viewmodels for the 5 parts of the screen
         private List<ViewModelBase> icons = [];
-        private ViewModelBase _iconVM;
+        private ViewModelBase? _iconVM;
         private List<ViewModelBase> scrolls = [];
-        private ViewModelBase _scrollVM;
+        private ViewModelBase? _scrollVM;
         private List<ViewModelBase> contents = [];
-        private ViewModelBase _contentVM;
+        private ViewModelBase? _contentVM;
         private List<ViewModelBase> lOptions = [];
-        private ViewModelBase _lOptionVM;
+        private ViewModelBase? _lOptionVM;
         private List<ViewModelBase> rOptions = [];
-        private ViewModelBase _rOptionVM;
+        private ViewModelBase? _rOptionVM;
+
 
         public MainWindowViewModel()
         {
             InputService.KeyInput += OnButtonPressed;
 
+            //a model definiton has functions to create the 5 portions of the screen
             List<IModuleDefinition> modules =
                 [
                 new DemoModule.DemoDefinition(),
@@ -40,35 +42,40 @@ namespace Mirrack.ViewModels
 
             foreach(IModuleDefinition module in modules)
             {
+                //create the 5 portions of the screen and add them to their respective list
                 icons.Add(module.CreateIconVM());
                 scrolls.Add(module.CreateScrollVM());
                 contents.Add(module.CreateContentVM());
                 lOptions.Add(module.CreateLOptionVM());
                 rOptions.Add(module.CreateROptionVM());
             }
-            _iconVM = icons[0];
-            _scrollVM = scrolls[0];
-            _contentVM = contents[0];
-            _lOptionVM = lOptions[0];
-            _rOptionVM = rOptions[0];
+            //set UI bound varibles to the first screen in the list
 
+            setScreen(0);
 
 
             new Task(keepTime).Start();
         }
+        private void setScreen(int index)
+        {
+            _iconVM = icons[index];
+            _scrollVM = scrolls[index];
+            _contentVM = contents[index];
+            _lOptionVM = lOptions[index];
+            _rOptionVM = rOptions[index];
+        }
 
+        private int screenIndex = 0;
         private void OnButtonPressed(Avalonia.Input.Key key, bool held)
         {
             if (key == Avalonia.Input.Key.Up && !held)
             {
                 //switch screen
                 screenIndex++;
+                //overflow to beginning
                 if(screenIndex >= icons.Count) { screenIndex = 0; }
-                IconVM = icons[screenIndex];
-                ScrollVM = scrolls[screenIndex];
-                ContentVM = contents[screenIndex];
-                LOptionVM = lOptions[screenIndex];
-                ROptionVM = rOptions[screenIndex];
+                //set each part of the screen to the appropreate index
+                setScreen(screenIndex);
             }
         }
         private string _time = "";
@@ -79,8 +86,9 @@ namespace Mirrack.ViewModels
         {
             while (true)
             {
+                //set time and date every sec. (Date obviously doen't need to be updated every sec, though with RaiseAndSetIfChanged, this is preformant enough)
                 await Dispatcher.UIThread.InvokeAsync(() => { Time = getTime(); Date = getDate(); });
-                await (Task.Delay(1000));
+                await Task.Delay(1000);
             }
         }
         
