@@ -33,6 +33,11 @@ namespace Mirrack.ViewModels
         public MainWindowViewModel()
         {
             InputService.KeyInput += OnButtonPressed;
+            TimeService.MinChanged += updateTime;
+            TimeService.DayChanged += updateDate;
+            //initalize date/time 
+            updateTime();
+            updateDate();
 
             //a model definiton has functions to create the 5 portions of the screen
             List<IModuleDefinition> modules =
@@ -50,11 +55,9 @@ namespace Mirrack.ViewModels
                 rOptions.Add(module.CreateROptionVM());
             }
             //set UI bound varibles to the first screen in the list
-
             setScreen(0);
 
-
-            new Task(keepTime).Start();
+            
         }
         private void setScreen(int index)
         {
@@ -80,20 +83,11 @@ namespace Mirrack.ViewModels
         }
         private string _time = "";
         private string _date = "";
-        private string getTime() => DateTime.Now.ToString("t");
-        private string getDate() => DateTime.Now.ToString("D");
-        private async void keepTime()
-        {
-            while (true)
-            {
-                //set time and date every sec. (Date obviously doen't need to be updated every sec, though with RaiseAndSetIfChanged, this is preformant enough)
-                await Dispatcher.UIThread.InvokeAsync(() => { Time = getTime(); Date = getDate(); });
-                await Task.Delay(1000);
-            }
-        }
+        private void updateTime() => Time = DateTime.Now.ToString("t");
+        private void updateDate() => Date = DateTime.Now.ToString("D");
         
         
-        public ViewModelBase IconVM
+        public ViewModelBase? IconVM
         {
             get => _iconVM; set
             {
@@ -101,7 +95,7 @@ namespace Mirrack.ViewModels
                 _iconVM = value;
             }
         }
-        public ViewModelBase ScrollVM
+        public ViewModelBase? ScrollVM
         {
             get => _scrollVM; set
             {
@@ -109,7 +103,7 @@ namespace Mirrack.ViewModels
                 _scrollVM = value;
             }
         }
-        public ViewModelBase ContentVM
+        public ViewModelBase? ContentVM
         {
             get => _contentVM; set
             {
@@ -117,7 +111,7 @@ namespace Mirrack.ViewModels
                 _contentVM = value;
             }
         }
-        public ViewModelBase LOptionVM
+        public ViewModelBase? LOptionVM
         {
             get => _lOptionVM; set
             {
@@ -125,7 +119,7 @@ namespace Mirrack.ViewModels
                 _lOptionVM = value;
             }
         }
-        public ViewModelBase ROptionVM
+        public ViewModelBase? ROptionVM
         {
             get => _rOptionVM; set
             {

@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Mirrack.Services;
 using Mirrack.ViewModels;
 using Mirrack.Views;
 
@@ -15,6 +16,7 @@ namespace Mirrack
 
         public override void OnFrameworkInitializationCompleted()
         {
+            TimeService.KeepTime();
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow

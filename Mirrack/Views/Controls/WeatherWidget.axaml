@@ -1,6 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:Mirrack">
+        xmlns:controls="using:Mirrack.Controls">
 
   <!--
     Additional resources 
@@ -13,15 +13,33 @@
   <Design.PreviewWith>
     <StackPanel Width="400" Spacing="10">      
         <StackPanel Background="{DynamicResource SystemRegionBrush}">
-          <controls:TemplatedControl1 />
+          <controls:WeatherWidget />
         </StackPanel>
     </StackPanel>
   </Design.PreviewWith>
  
-  <ControlTheme x:Key="{x:Type controls:TemplatedControl1}" TargetType="controls:TemplatedControl1">
+  <ControlTheme x:Key="{x:Type controls:WeatherWidget}" TargetType="controls:WeatherWidget">
     <Setter Property="Template">
       <ControlTemplate>
-        <TextBlock Text="Templated Control" />
+		  <Grid RowDefinitions="3*,1*" RowSpacing="10" Margin="20">
+			  <StackPanel Grid.Row="0">
+				  <Image Source="/Assets/avalonia-logo.ico" MaxHeight="132"/>
+				  <TextBlock Text="72°F" FontSize="64" FontWeight="Bold" TextAlignment="Center"/>
+				  <TextBlock Text="Cloudy" FontSize="32" TextAlignment="Center"/>
+			  </StackPanel>
+			  <Grid Grid.Row="1" ColumnDefinitions="*,*" RowDefinitions="*,*" RowSpacing="20">
+				  <TextBlock Grid.Column="0" Grid.Row="0" Text="High: 71°F" FontWeight="Bold" TextAlignment="Center" FontSize="32"/>
+				  <TextBlock Grid.Column="1" Grid.Row="0" Text="Low: 62°F"  FontWeight="Bold" TextAlignment="Center" FontSize="32"/>
+				  <StackPanel Grid.Column="0" Grid.Row="1">
+					  <Label HorizontalAlignment="Center" FontSize="20">Precipitation</Label>
+					  <TextBlock Text="52%" FontSize="32" FontWeight="Bold" TextAlignment="Center" />
+				  </StackPanel>
+				  <StackPanel Grid.Column="1" Grid.Row="1">
+					  <Label HorizontalAlignment="Center" FontSize="20">Wind</Label>
+					  <TextBlock Text="20 MPH" FontSize="32" FontWeight="Bold" TextAlignment="Center" />
+				  </StackPanel>
+			  </Grid>
+		  </Grid>
       </ControlTemplate>
     </Setter>
   </ControlTheme>

@@ -38,6 +38,9 @@
     <Compile Update="Views\Controls\LCorner.axaml.cs">
       <DependentUpon>LCorner.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Controls\WeatherWidget.axaml.cs">
+      <DependentUpon>WeatherWidget.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DemoModule\DemoROptionView.axaml.cs">
       <DependentUpon>DemoROptionView.axaml</DependentUpon>
     </Compile>

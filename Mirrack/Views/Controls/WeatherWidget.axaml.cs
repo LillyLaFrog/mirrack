@@ -1,11 +1,11 @@
 using Avalonia.Controls.Primitives;
 
-namespace Mirrack;
+namespace Mirrack.Controls;
 
 public class WeatherWidget : TemplatedControl
 {
-    WeatherWidget()
+    public WeatherWidget()
     {
-
+        
     }
 }
