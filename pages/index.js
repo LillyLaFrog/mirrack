@@ -44,8 +44,7 @@ export default function Home() {
       </div>
       <br/>
       <p>
-        If you are interested in buying a kit or supporting the project, email me at 
-        <a href="mailto:contact@mirrack.xyz">contact@mirrack.xyz</a>. Have any more questions about this project? feel free to reach out!
+        If you are interested in buying a kit or supporting the project, email me at <a href="mailto:contact@mirrack.xyz">contact@mirrack.xyz</a>. Have any more questions about this project? feel free to reach out!
       </p>
       <br/>
       <h3>Features</h3>
