@@ -11,22 +11,22 @@ namespace Mirrack.Models
         public WeatherData()
         {
             //create default weatherData
-            units = "us";
-            icon = "cloudy";
-            summary = "Overcast";
-            temperature = 70.13;
-            temperatureHigh = 75.23;
-            temperatureLow = 65.72;
-            precipProbability = 0.25;
-            windSpeed = 7.2;
+            Units = "us";
+            Icon = "cloudy";
+            Summary = "Overcast";
+            Temperature = 70.13;
+            TemperatureHigh = 75.23;
+            TemperatureLow = 65.72;
+            PrecipProbability = 0.25;
+            WindSpeed = 7.2;
         }
-        public string? units { get; set; }
-        public string? icon { get; set; }
-        public string? summary { get; set; }
-        public double temperature { get; set; }
-        public double temperatureHigh { get; set; }
-        public double temperatureLow { get; set; }
-        public double precipProbability { get; set; }
-        public double windSpeed { get; set; }
+        public string? Units { get; set; }
+        public string? Icon { get; set; }
+        public string? Summary { get; set; }
+        public double Temperature { get; set; }
+        public double TemperatureHigh { get; set; }
+        public double TemperatureLow { get; set; }
+        public double PrecipProbability { get; set; }
+        public double WindSpeed { get; set; }
     }
 }

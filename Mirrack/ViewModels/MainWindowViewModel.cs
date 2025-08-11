@@ -33,9 +33,11 @@ namespace Mirrack.ViewModels
         public MainWindowViewModel()
         {
             InputService.KeyInput += OnButtonPressed;
+            //update time every minute
             TimeService.MinChanged += updateTime;
+            //update date every day
             TimeService.DayChanged += updateDate;
-            //initalize date/time 
+            //inital date/time fetch
             updateTime();
             updateDate();
 
@@ -43,6 +45,7 @@ namespace Mirrack.ViewModels
             List<IModuleDefinition> modules =
                 [
                 new DemoModule.DemoDefinition(),
+                new WeatherModule.Definition(),
                 ];
 
             foreach(IModuleDefinition module in modules)
@@ -61,11 +64,11 @@ namespace Mirrack.ViewModels
         }
         private void setScreen(int index)
         {
-            _iconVM = icons[index];
-            _scrollVM = scrolls[index];
-            _contentVM = contents[index];
-            _lOptionVM = lOptions[index];
-            _rOptionVM = rOptions[index];
+            IconVM = icons[index];
+            ScrollVM = scrolls[index];
+            ContentVM = contents[index];
+            LOptionVM = lOptions[index];
+            ROptionVM = rOptions[index];
         }
 
         private int screenIndex = 0;
@@ -79,6 +82,7 @@ namespace Mirrack.ViewModels
                 if(screenIndex >= icons.Count) { screenIndex = 0; }
                 //set each part of the screen to the appropreate index
                 setScreen(screenIndex);
+                Debug.WriteLine(screenIndex);
             }
         }
         private string _time = "";

@@ -14,7 +14,7 @@ namespace Mirrack.Views
         public MainWindow()
         {
             InitializeComponent();
-            //handle input here
+            //listen to input on main window, pass it along to anything using the input service
             this.PointerWheelChanged += onPointerWheel;
             this.KeyDown += onKeyDown;
             this.KeyUp += onKeyUp;
