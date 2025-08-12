@@ -13,7 +13,7 @@
   <Design.PreviewWith>
     <StackPanel Width="360" Spacing="10">      
         <StackPanel Background="Black">
-          <controls:WeatherWidget Icon="cloudy" Summary="Overcast" Temperature="75°F" TemperatureHigh="82°F" TemperatureLow="71°F" PrecipProbability="25%" WindSpeed="20 MPH"/>
+          <controls:WeatherWidget Icon="/Assets/weatherIcons/cloudy.png" Summary="Overcast" Temperature="75°F" TemperatureHigh="82°F" TemperatureLow="71°F" PrecipProbability="25%" WindSpeed="20 MPH"/>
         </StackPanel>
     </StackPanel>
   </Design.PreviewWith>
@@ -25,7 +25,6 @@
 		  <Grid RowDefinitions="2*,1*" >
 			  <StackPanel Grid.Row="0">
 				  <Image Source="{TemplateBinding Icon}" MaxHeight="120" Margin="12"/>
-				  <!--todo! make this correspond with "Icon" property-->
 				  <TextBlock Text="{TemplateBinding Temperature}" FontSize="64" FontWeight="Bold" TextAlignment="Center"/>
 				  <TextBlock Text="{TemplateBinding Summary}" FontSize="32" TextAlignment="Center"/>
 			  </StackPanel>
