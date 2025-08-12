@@ -13,7 +13,7 @@
   <Design.PreviewWith>
     <StackPanel Width="200" Height="200" Spacing="10">      
         <StackPanel Background="{DynamicResource SystemRegionBrush}">
-          <controls:AnalogClock />
+          <controls:AnalogClock/>
         </StackPanel>
     </StackPanel>
   </Design.PreviewWith>
@@ -22,21 +22,19 @@
     <Setter Property="Template">
       <ControlTemplate>
 		  <Grid Width="200" Height="200">
-			  <Ellipse Fill="Black" Height="10" Width="10" />
-			  <Ellipse Stroke="Black" StrokeThickness="10"/>
-			    <Border>
+			  <Ellipse Stroke="Black" StrokeThickness="5"/>
+			    <Border x:Name="PART_HourHand">
 					<Border.RenderTransform>
-						<RotateTransform Angle="102.5"/>
+						<RotateTransform />
 					</Border.RenderTransform>
-				    <Rectangle VerticalAlignment="Top" Margin="40" Fill="Black" Width="10" Height="60"/>
+				    <Rectangle VerticalAlignment="Top" Margin="55" Fill="Black" Width="5" Height="55"/>
 			    </Border>
-			  <Border>
+			  <Border x:Name="PART_MinuteHand">
 				  <Border.RenderTransform>
-					  <RotateTransform Angle="0"/>
+					  <RotateTransform/>
 				  </Border.RenderTransform>
-				  <Rectangle VerticalAlignment="Top" Margin="20" Fill="Black" Width="10" Height="80"/>
+				  <Rectangle VerticalAlignment="Top" Margin="30" Fill="Black" Width="5" Height="80"/>
 			  </Border>
-		    
 		  </Grid>
 
       </ControlTemplate>
