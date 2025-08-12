@@ -18,9 +18,11 @@ namespace Mirrack.Views
             this.PointerWheelChanged += onPointerWheel;
             this.KeyDown += onKeyDown;
             this.KeyUp += onKeyUp;
+            
+            DataContext = new ();
         }
 
-        public void onPointerWheel(object? sender, PointerWheelEventArgs args)
+        private void onPointerWheel(object? sender, PointerWheelEventArgs args)
         {
             InputService.RaiseScroll(args.Delta);
             args.Handled = true;
@@ -29,18 +31,18 @@ namespace Mirrack.Views
         //mark time to check how long btn press was when released
         private bool _keyDown = false;
         private DateTime timePressed;
-        public void onKeyDown(object? sender, KeyEventArgs args)
+        private void onKeyDown(object? sender, KeyEventArgs args)
         {
             if (!_keyDown)
             {
                 timePressed = DateTime.Now;
                 _keyDown = true;
             }
-                args.Handled = true;
+            args.Handled = true;
         }
 
         //use keyDown time to check if button was pressed or held
-        public void onKeyUp(object? sender, KeyEventArgs args) 
+        private void onKeyUp(object? sender, KeyEventArgs args) 
         {
             int HoldDelay = 500;
             _keyDown = false;
