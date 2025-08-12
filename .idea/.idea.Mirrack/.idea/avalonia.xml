@@ -3,10 +3,17 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="Mirrack/App.axaml" value="Mirrack/Mirrack.csproj" />
         <entry key="Mirrack/Views/Controls/AnalogClock.axaml" value="Mirrack/Mirrack.csproj" />
         <entry key="Mirrack/Views/Controls/LCorner.axaml" value="Mirrack/Mirrack.csproj" />
         <entry key="Mirrack/Views/Controls/LOption.axaml" value="Mirrack/Mirrack.csproj" />
         <entry key="Mirrack/Views/Controls/RCorner.axaml" value="Mirrack/Mirrack.csproj" />
+        <entry key="Mirrack/Views/Controls/WeatherWidget.axaml" value="Mirrack/Mirrack.csproj" />
+        <entry key="Mirrack/Views/DemoModule/DemoContentView.axaml" value="Mirrack/Mirrack.csproj" />
+        <entry key="Mirrack/Views/Layout.axaml" value="Mirrack/Mirrack.csproj" />
+        <entry key="Mirrack/Views/LoginView.axaml" value="Mirrack/Mirrack.csproj" />
+        <entry key="Mirrack/Views/MainWindow.axaml" value="Mirrack/Mirrack.csproj" />
+        <entry key="Mirrack/Views/WeatherModule/IconView.axaml" value="Mirrack/Mirrack.csproj" />
       </map>
     </option>
   </component>

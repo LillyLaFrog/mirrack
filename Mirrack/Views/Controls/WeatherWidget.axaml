@@ -24,8 +24,8 @@
       <ControlTemplate>
 		  <Grid RowDefinitions="2*,1*" >
 			  <StackPanel Grid.Row="0">
-				  <Image Source="/Assets/weatherIcons/clear-night.png" MaxHeight="120" Margin="12"/>
-				  <!--todo! make this corospond with "Icon" property-->
+				  <Image Source="{TemplateBinding Icon}" MaxHeight="120" Margin="12"/>
+				  <!--todo! make this correspond with "Icon" property-->
 				  <TextBlock Text="{TemplateBinding Temperature}" FontSize="64" FontWeight="Bold" TextAlignment="Center"/>
 				  <TextBlock Text="{TemplateBinding Summary}" FontSize="32" TextAlignment="Center"/>
 			  </StackPanel>

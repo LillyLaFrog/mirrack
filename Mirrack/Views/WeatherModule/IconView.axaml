@@ -10,7 +10,7 @@
 
 	<controls:LCorner>
 		<Border  Background="Black" Width="350">
-			<controls:WeatherWidget Summary="{Binding Summary}" Temperature="{Binding Temperature}" TemperatureHigh="{Binding TemperatureHigh}" TemperatureLow="{Binding TemperatureHigh}" PrecipProbability="{Binding PrecipProbability}" WindSpeed="{Binding WindSpeed}" />
+			<controls:WeatherWidget Icon="{Binding Icon}" Summary="{Binding Summary}" Temperature="{Binding Temperature}" TemperatureHigh="{Binding TemperatureHigh}" TemperatureLow="{Binding TemperatureLow}" PrecipProbability="{Binding PrecipProbability}" WindSpeed="{Binding WindSpeed}" />
 		</Border>
 	</controls:LCorner>
 </UserControl>

@@ -4,6 +4,7 @@ using Mirrack.Models;
 using System;
 using System.Reactive;
 using System.Xml;
+using Avalonia.Media;
 
 namespace Mirrack.Controls;
 
@@ -11,8 +12,8 @@ public class WeatherWidget : TemplatedControl
 {
 
     //displayed datapoints
-    public static readonly StyledProperty<string> IconProperty =
-        AvaloniaProperty.Register<WeatherWidget, string>(nameof(Icon));
+    public static readonly StyledProperty<IImage> IconProperty =
+        AvaloniaProperty.Register<WeatherWidget, IImage>(nameof(Icon));
     public static readonly StyledProperty<string> SummaryProperty =
         AvaloniaProperty.Register<WeatherWidget, string>(nameof(Summary));
     public static readonly StyledProperty<string> TemperatureProperty =
@@ -26,7 +27,7 @@ public class WeatherWidget : TemplatedControl
     public static readonly StyledProperty<string> WindSpeedProperty =
         AvaloniaProperty.Register<WeatherWidget, string>(nameof(WindSpeed));
 
-    public string Icon { get => GetValue(IconProperty); set => SetValue(IconProperty, value); }
+    public IImage Icon { get => GetValue(IconProperty); set => SetValue(IconProperty, value); }
     public string Summary { get => GetValue(SummaryProperty); set => SetValue(SummaryProperty, value); }
     public string Temperature { get => GetValue(TemperatureProperty); set => SetValue(TemperatureProperty, value); }
     public string TemperatureHigh { get => GetValue(TemperatureHighProperty); set => SetValue(TemperatureHighProperty,value); }

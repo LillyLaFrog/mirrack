@@ -15,14 +15,14 @@ namespace Mirrack.Views
         {
             InitializeComponent();
             //listen to input on main window, pass it along to anything using the input service
-            this.PointerWheelChanged += onPointerWheel;
-            this.KeyDown += onKeyDown;
-            this.KeyUp += onKeyUp;
+            this.PointerWheelChanged += OnPointerWheel;
+            this.KeyDown += OnKeyDown;
+            this.KeyUp += OnKeyUp;
             
-            DataContext = new ();
+            DataContext = new MainWindowViewModel();
         }
 
-        private void onPointerWheel(object? sender, PointerWheelEventArgs args)
+        private void OnPointerWheel(object? sender, PointerWheelEventArgs args)
         {
             InputService.RaiseScroll(args.Delta);
             args.Handled = true;
@@ -31,7 +31,7 @@ namespace Mirrack.Views
         //mark time to check how long btn press was when released
         private bool _keyDown = false;
         private DateTime timePressed;
-        private void onKeyDown(object? sender, KeyEventArgs args)
+        private void OnKeyDown(object? sender, KeyEventArgs args)
         {
             if (!_keyDown)
             {
@@ -42,12 +42,12 @@ namespace Mirrack.Views
         }
 
         //use keyDown time to check if button was pressed or held
-        private void onKeyUp(object? sender, KeyEventArgs args) 
+        private void OnKeyUp(object? sender, KeyEventArgs args) 
         {
-            int HoldDelay = 500;
+            int holdDelay = 500;
             _keyDown = false;
             //if held for longer than hold delay
-            if (DateTime.Now - timePressed > TimeSpan.FromMilliseconds(HoldDelay))
+            if (DateTime.Now - timePressed > TimeSpan.FromMilliseconds(holdDelay))
             {
                 //key held
                 InputService.RaiseKey(args.Key, true);

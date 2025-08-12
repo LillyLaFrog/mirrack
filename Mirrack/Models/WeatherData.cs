@@ -20,6 +20,19 @@ namespace Mirrack.Models
             PrecipProbability = 0.25;
             WindSpeed = 7.2;
         }
+
+        public WeatherData(string units, string icon, string summary, double temperature, double temperatureHigh, double temperatureLow, double precipProbability, double windSpeed)
+        {
+            //create default weatherData with icon for testing
+            Units = units;
+            Icon = icon;
+            Summary = summary;
+            Temperature = temperature;
+            TemperatureHigh = temperatureHigh;
+            TemperatureLow = temperatureLow;
+            PrecipProbability = precipProbability;
+            WindSpeed = windSpeed;
+        }
         public string? Units { get; set; }
         public string? Icon { get; set; }
         public string? Summary { get; set; }

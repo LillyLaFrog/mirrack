@@ -15,7 +15,7 @@ namespace Mirrack.Models
 {
     internal class WeatherModel
     {
-        public async static Task<WeatherData?> GetWeather(double lat, double lng, string units)
+        public static async Task<WeatherData?> GetWeather(double lat, double lng, string units)
         {
             string weatherUri = $"https://api.pirateweather.net/forecast/[apikey]/{lat},{lng}&units={units}";
             using (HttpClient client = new HttpClient())
