@@ -1,13 +1,15 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Mirrack.ViewModels;
 
 namespace Mirrack.Views;
 
-public partial class LoginView : UserControl
+public partial class AuthView : UserControl
 {
-    public LoginView()
+    public AuthView()
     {
         InitializeComponent();
+        DataContext = new AuthViewModel();
     }
 }

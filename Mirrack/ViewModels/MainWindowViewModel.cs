@@ -25,9 +25,9 @@ namespace Mirrack.ViewModels
         }
 
         private readonly ViewModelBase _layout = new LayoutViewModel();
-        private readonly ViewModelBase _login =  new LayoutViewModel();
+        private readonly ViewModelBase _auth =  new AuthViewModel();
         //todo: make this use app-wide state (maybe make a file or something) 
-        private bool _loggedIn = false;
+        private bool _loggedIn = true;
         public ViewModelBase Screen
         {
             get
@@ -38,7 +38,7 @@ namespace Mirrack.ViewModels
                 }
                 else
                 {
-                    return _login;
+                    return _auth;
                 }
             }
         }

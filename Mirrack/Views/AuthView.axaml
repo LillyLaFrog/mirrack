@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="1920"
+             x:Class="Mirrack.Views.AuthView">
+    <Grid RowDefinitions="3*,5*,2*" Background="SkyBlue">
+        <StackPanel Spacing="42" VerticalAlignment="Center">
+            <TextBlock FontSize="128" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold">Welcome To Mirrack!</TextBlock>
+            <TextBlock FontSize="50" TextAlignment="Center" TextWrapping="Wrap">Looks like you've connected to internet, let's get you logged in!</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Background="White">
+            <TextBox Background="SlateGray" AcceptsTab="True"></TextBox>
+            <TextBox Background="SlateGray" AcceptsReturn="True"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Spacing="32" VerticalAlignment="Center">
+            <TextBlock FontSize="64" TextWrapping="Wrap" TextAlignment="Center">You'll need a keyboard for setup, plug one in now!</TextBlock>
+            <TextBlock FontSize="42" TextWrapping="Wrap" TextAlignment="Center">If you need to reset your password, use another device to visit the account portal at mirrack.xyz/login</TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

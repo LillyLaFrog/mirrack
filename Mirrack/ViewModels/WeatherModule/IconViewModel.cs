@@ -64,7 +64,7 @@ namespace Mirrack.ViewModels.WeatherModule
         }
         private async void UpdateWeather()
         {
-            //todo: use an actual request instead of making a new weatherData
+            //todo: use an actual request instead of hardcoded values weatherData
             CurrentWeather = new WeatherData("uk","fog","foggy!",64.5,88.2,60.0,.99,14); //await WeatherModel.GetWeather(19,19,"us");
         }
     }
