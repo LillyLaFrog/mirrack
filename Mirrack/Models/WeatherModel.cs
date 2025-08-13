@@ -15,14 +15,22 @@ namespace Mirrack.Models
 {
     internal class WeatherModel
     {
-        public static async Task<WeatherData?> GetWeather(double lat, double lng, string units)
+        public static async Task<WeatherData?> GetWeather(string idToken)
         {
-            string weatherUri = $"https://api.pirateweather.net/forecast/[apikey]/{lat},{lng}&units={units}";
+            //todo switch this to production url :)
+            string weatherUri = "http://127.0.0.1:5001/mirrack-ecb5a/us-central1/getWeather";
             using (HttpClient client = new HttpClient())
             {
+                
                 try
                 {
-                    HttpResponseMessage response = await client.GetAsync(weatherUri);
+                    var postData = new Dictionary<string, string>
+                    {
+                        { "idToken", "1234" },
+                        { "weekly", "false" }
+                    };
+                    var postContent = new FormUrlEncodedContent(postData);
+                    HttpResponseMessage response = await client.PostAsync((string)weatherUri, postContent);
                     response.EnsureSuccessStatusCode();
                     string content = await response.Content.ReadAsStringAsync();
                     WeatherData? data = JsonSerializer.Deserialize<WeatherData>(content);

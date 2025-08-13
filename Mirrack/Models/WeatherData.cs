@@ -8,38 +8,25 @@ namespace Mirrack.Models
 {
     public class WeatherData
     {
-        public WeatherData()
+        public WeatherData(string units, string icon, string summary, double temperature, double temperatureMax, double temperatureMin, double precipProbability, double windSpeed)
         {
-            //create default weatherData
-            Units = "us";
-            Icon = "cloudy";
-            Summary = "Overcast";
-            Temperature = 70.13;
-            TemperatureHigh = 75.23;
-            TemperatureLow = 65.72;
-            PrecipProbability = 0.25;
-            WindSpeed = 7.2;
+            //create hardcoded weatherData with icon for testing
+            this.units = units;
+            this.icon = icon;
+            this.summary = summary;
+            this.temperature = temperature;
+            this.temperatureMax = temperatureMax;
+            this.temperatureMin = temperatureMin;
+            this.precipProbability = precipProbability;
+            this.windSpeed = windSpeed;
         }
-
-        public WeatherData(string units, string icon, string summary, double temperature, double temperatureHigh, double temperatureLow, double precipProbability, double windSpeed)
-        {
-            //create default weatherData with icon for testing
-            Units = units;
-            Icon = icon;
-            Summary = summary;
-            Temperature = temperature;
-            TemperatureHigh = temperatureHigh;
-            TemperatureLow = temperatureLow;
-            PrecipProbability = precipProbability;
-            WindSpeed = windSpeed;
-        }
-        public string? Units { get; set; }
-        public string? Icon { get; set; }
-        public string? Summary { get; set; }
-        public double Temperature { get; set; }
-        public double TemperatureHigh { get; set; }
-        public double TemperatureLow { get; set; }
-        public double PrecipProbability { get; set; }
-        public double WindSpeed { get; set; }
+        public string? units { get; set; }
+        public string? icon { get; set; }
+        public string? summary { get; set; }
+        public double temperature { get; set; }
+        public double temperatureMax { get; set; }
+        public double temperatureMin { get; set; }
+        public double precipProbability { get; set; }
+        public double windSpeed { get; set; }
     }
 }
