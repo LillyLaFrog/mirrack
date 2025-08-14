@@ -13,6 +13,7 @@ using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using Mirrack.Views;
 
 namespace Mirrack.ViewModels
 {
@@ -22,25 +23,37 @@ namespace Mirrack.ViewModels
 
         public MainWindowViewModel()
         {
+            RefreshScreen();
+            AuthService.LoginChange += OnLoginChange;
         }
 
         private readonly ViewModelBase _layout = new LayoutViewModel();
         private readonly ViewModelBase _auth =  new AuthViewModel();
-        //todo: make this use app-wide state (maybe make a file or something) 
-        private bool _loggedIn = true;
+        private ViewModelBase _screen = new LoadingViewModel();
         public ViewModelBase Screen
         {
-            get
+            get => _screen;
+            set
             {
-                if (_loggedIn)
-                {
-                    return _layout;
-                }
-                else
-                {
-                    return _auth;
-                }
+                this.RaiseAndSetIfChanged(ref _screen, value);
+                _screen = value;
             }
+        }
+        
+        public void OnLoginChange(bool isLoggedIn)
+        {
+            if (isLoggedIn)
+            {
+                Screen = _layout;
+            }
+            else
+            {
+                Screen = _auth;
+            }
+        }
+        public async Task RefreshScreen()
+        {
+            OnLoginChange(await AuthModel.Refresh());
         }
 
     }

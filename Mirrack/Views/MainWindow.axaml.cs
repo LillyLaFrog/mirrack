@@ -18,9 +18,9 @@ namespace Mirrack.Views
             this.PointerWheelChanged += OnPointerWheel;
             this.KeyDown += OnKeyDown;
             this.KeyUp += OnKeyUp;
-            
             DataContext = new MainWindowViewModel();
         }
+        
 
         private void OnPointerWheel(object? sender, PointerWheelEventArgs args)
         {
@@ -38,7 +38,8 @@ namespace Mirrack.Views
                 timePressed = DateTime.Now;
                 _keyDown = true;
             }
-            args.Handled = true;
+            //let key presses bubble past this for keyboard input :)
+            args.Handled = false;
         }
 
         //use keyDown time to check if button was pressed or held

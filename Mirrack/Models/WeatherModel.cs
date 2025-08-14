@@ -15,18 +15,19 @@ namespace Mirrack.Models
 {
     internal class WeatherModel
     {
-        public static async Task<WeatherData?> GetWeather(string idToken)
+        public static async Task<WeatherData?> GetWeather()
         {
             //todo switch this to production url :)
-            string weatherUri = "http://127.0.0.1:5001/mirrack-ecb5a/us-central1/getWeather";
+            string weatherUri = "https://getweather-i3pl3ppnaa-uc.a.run.app";
             using (HttpClient client = new HttpClient())
             {
                 
                 try
                 {
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     var postData = new Dictionary<string, string>
                     {
-                        { "idToken", "1234" },
+                        { "idToken", AuthModel.IdToken != null? AuthModel.IdToken : "" },
                         { "weekly", "false" }
                     };
                     var postContent = new FormUrlEncodedContent(postData);

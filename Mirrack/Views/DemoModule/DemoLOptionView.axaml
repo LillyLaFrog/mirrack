@@ -7,6 +7,6 @@
 			 Background="Black"
              x:Class="Mirrack.Views.DemoModule.DemoLOptionView">
 
-	<controls:LOption PrimaryOption="Left Option" SecondaryOption="Left Option (hold)"/>
+	<!--controls:LOption PrimaryOption="Left Option" SecondaryOption="Left Option (hold)"/-->
 	
 </UserControl>

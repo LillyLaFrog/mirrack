@@ -6,8 +6,8 @@
              mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="360"
              x:Class="Mirrack.Views.DemoModule.DemoScrollView">
 
-	<controls:RCorner>
-		<Label Content="&lt;--&gt;" Foreground="White" FontSize="100" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-	</controls:RCorner>
+	<!--controls:RCorner>
+		<Label Content=";" Foreground="White" FontSize="100" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+	<controls:RCorner-->
 	
 </UserControl>

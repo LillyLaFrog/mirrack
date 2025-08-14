@@ -68,7 +68,7 @@ namespace Mirrack.ViewModels.WeatherModule
             //CurrentWeather = new WeatherData("uk","fog","foggy!",64.5,88.2,60.0,.99,14);
             
             //todo: use an actual idToken
-            WeatherData? data = await WeatherModel.GetWeather("1234");
+            WeatherData? data = await WeatherModel.GetWeather();
             if (data != null)
             {
                 CurrentWeather = data;

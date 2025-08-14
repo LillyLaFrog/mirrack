@@ -2,16 +2,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Mirrack.ViewModels"
              mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="1920"
-             x:Class="Mirrack.Views.AuthView">
+             x:Class="Mirrack.Views.AuthView"
+             x:DataType="vm:AuthViewModel">
     <Grid RowDefinitions="3*,5*,2*" Background="SkyBlue">
         <StackPanel Spacing="42" VerticalAlignment="Center">
             <TextBlock FontSize="128" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold">Welcome To Mirrack!</TextBlock>
             <TextBlock FontSize="50" TextAlignment="Center" TextWrapping="Wrap">Looks like you've connected to internet, let's get you logged in!</TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="1" Background="White">
-            <TextBox Background="SlateGray" AcceptsTab="True"></TextBox>
-            <TextBox Background="SlateGray" AcceptsReturn="True"></TextBox>
+        <StackPanel Grid.Row="1" Background="White" Spacing="32">
+            <TextBlock TextAlignment="Center" FontSize="64">Log in to an account:</TextBlock>
+            <TextBox Background="LightGray" Watermark="Email" Text="{Binding Email}" FontSize="32" HorizontalAlignment="Center" Width="300"/>
+            <TextBox PasswordChar="*" Background="LightGray" Watermark="Password" Text="{Binding Password}" FontSize="32" HorizontalAlignment="Center" Width="300"/>
+            <Button FontSize="32" HorizontalAlignment="Center" Command="{Binding LoginBtn}">Login</Button>
         </StackPanel>
         <StackPanel Grid.Row="2" Spacing="32" VerticalAlignment="Center">
             <TextBlock FontSize="64" TextWrapping="Wrap" TextAlignment="Center">You'll need a keyboard for setup, plug one in now!</TextBlock>

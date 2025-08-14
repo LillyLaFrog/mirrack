@@ -7,5 +7,5 @@
 			 Background="Black"
              x:Class="Mirrack.Views.DemoModule.DemoROptionView">
 
-	<controls:ROption PrimaryOption="Right Option" SecondaryOption="Right option (hold)"/>
+	<controls:ROption PrimaryOption="Log out (hold)" SecondaryOption=""/>
 </UserControl>
