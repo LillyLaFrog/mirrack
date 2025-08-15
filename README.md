@@ -31,3 +31,11 @@ Visit https://Mirrack.xyz for more information on the project, links to buy kits
 Happy Hacking!
 
 Mirrack 2025
+
+Attribution:
+
+<a href="https://www.flaticon.com/free-icons/loading" title="loading icons">Loading icons created by Freepik - Flaticon</a>
+
+<a href="https://www.freepik.com/icon/setting_18542751#fromView=keyword&page=1&position=4&uuid=f1f2f5a2-50c3-4bfb-b0e5-c9eaa3042839">Settings Icon by Iconic Panda</a>
+
+<a href="https://www.reshot.com/free-svg-icons/item/weather-filled-round-corner-icons-Y83ZNE4DTQ/">Weather Icons by IconBunny - clear-night edited by me</a>
