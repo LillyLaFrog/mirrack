@@ -11,7 +11,7 @@
   -->
   
   <Design.PreviewWith>
-    <StackPanel Width="360" Spacing="10">      
+    <StackPanel Width="280" Height="256" Spacing="6">      
         <StackPanel Background="Black">
           <controls:WeatherWidget Icon="/Assets/weatherIcons/cloudy.png" Summary="Overcast" Temperature="75°F" TemperatureHigh="82°F" TemperatureLow="71°F" PrecipProbability="25%" WindSpeed="20 MPH"/>
         </StackPanel>
@@ -24,26 +24,26 @@
       <ControlTemplate>
 		  <Grid RowDefinitions="2*,1*" >
 			  <StackPanel Grid.Row="0">
-				  <Image Source="{TemplateBinding Icon}" MaxHeight="120" Margin="12"/>
-				  <TextBlock Text="{TemplateBinding Temperature}" FontSize="64" FontWeight="Bold" TextAlignment="Center"/>
-				  <TextBlock Text="{TemplateBinding Summary}" FontSize="32" TextAlignment="Center"/>
+				  <Image Source="{TemplateBinding Icon}" MaxHeight="70" Margin="8"/>
+				  <TextBlock Text="{TemplateBinding Temperature}" FontSize="42" FontWeight="Bold" TextAlignment="Center"/>
+				  <TextBlock Text="{TemplateBinding Summary}" FontSize="20" TextAlignment="Center"/>
 			  </StackPanel>
 			  <Grid Grid.Row="1" ColumnDefinitions="*,*" RowDefinitions="*,*">
 				  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-					  <TextBlock FontSize="20" Padding="3" VerticalAlignment="Center">High:</TextBlock>
-					  <TextBlock Text="{TemplateBinding TemperatureHigh}" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Padding="3"/>
+					  <TextBlock FontSize="13" Padding="3" VerticalAlignment="Center">High:</TextBlock>
+					  <TextBlock Text="{TemplateBinding TemperatureHigh}" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Padding="3"/>
 				  </StackPanel>
 				  <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-					  <TextBlock FontSize="20" VerticalAlignment="Center">Low:</TextBlock>
-					  <TextBlock Text="{TemplateBinding TemperatureLow}" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Padding="3"/>
+					  <TextBlock FontSize="13" VerticalAlignment="Center">Low:</TextBlock>
+					  <TextBlock Text="{TemplateBinding TemperatureLow}" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Padding="3"/>
 				  </StackPanel>
 				  <StackPanel Grid.Row="1">
-					  <Label HorizontalAlignment="Center" FontSize="20">Precipitation</Label>
-					  <TextBlock Text="{TemplateBinding PrecipProbability}" FontSize="25" FontWeight="Bold" TextAlignment="Center" />
+					  <Label HorizontalAlignment="Center" FontSize="13">Precipitation</Label>
+					  <TextBlock Text="{TemplateBinding PrecipProbability}" FontSize="20" FontWeight="Bold" TextAlignment="Center" />
 				  </StackPanel>
 				  <StackPanel Grid.Column="1" Grid.Row="1">
-					  <Label HorizontalAlignment="Center" FontSize="20">Wind</Label>
-					  <TextBlock Text="{TemplateBinding WindSpeed}" FontSize="25" FontWeight="Bold" TextAlignment="Center" />
+					  <Label HorizontalAlignment="Center" FontSize="13">Wind</Label>
+					  <TextBlock Text="{TemplateBinding WindSpeed}" FontSize="20" FontWeight="Bold" TextAlignment="Center" />
 				  </StackPanel>
 			  </Grid>
 		  </Grid>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Mirrack"
 		xmlns:demo="clr-namespace:Mirrack.Views.DemoModule"
 		mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="1920"
-		Width="540" Height="960"
+		Width="720" Height="1280"
 		Background="Black"
         x:Class="Mirrack.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"

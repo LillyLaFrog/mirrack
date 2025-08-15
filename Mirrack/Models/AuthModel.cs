@@ -92,6 +92,7 @@ public static class AuthModel
                 Uid = data.user_id;
                 //update refresh token since we have it, though old refresh token should still be valid too!
                 RefreshToken = data.refresh_token;
+                AuthService.RaiseAuthenticated();
                 return true;
             }
             catch

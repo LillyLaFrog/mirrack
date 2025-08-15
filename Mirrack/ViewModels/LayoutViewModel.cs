@@ -30,7 +30,7 @@ public class LayoutViewModel : ViewModelBase
     private ViewModelBase? _rOptionVM;
     
     //keep track of what screen is focused
-    private int _screenIndex = 0;
+    public int _screenIndex = 0;
     
     private string _time = "";
     private string _date = "";
@@ -94,7 +94,6 @@ public class LayoutViewModel : ViewModelBase
             _date = value;
         }
     }
-
     public LayoutViewModel()
     {
         //update time every minute
@@ -146,11 +145,31 @@ public class LayoutViewModel : ViewModelBase
     
     private void setScreen(int index)
     {
+        //set isFocused to false on old screen items (if they exist)
+        
+        if (IconVM != null && ScrollVM != null && ContentVM != null && LOptionVM != null && ROptionVM != null)
+        {
+            IconVM.IsFocused = false;
+            ScrollVM.IsFocused = false;
+            ContentVM.IsFocused = false;
+            LOptionVM.IsFocused = false;
+            ROptionVM.IsFocused = false;
+        }
+
+        //switch screen
         IconVM = icons[index];
         ScrollVM = scrolls[index];
         ContentVM = contents[index];
         LOptionVM = lOptions[index];
         ROptionVM = rOptions[index];
+
+        //set isFocused to true on new screen items
+        IconVM.IsFocused = true;
+        ScrollVM.IsFocused = true;
+        ContentVM.IsFocused = true;
+        LOptionVM.IsFocused = true;
+        ROptionVM.IsFocused = true;
+
     }
     
     private void updateTime() => Time = DateTime.Now.ToString("t");

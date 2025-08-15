@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:Mirrack.ViewModels"
 			 xmlns:controls="using:Mirrack.Controls"
-             mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="400"
+             mc:Ignorable="d" d:DesignWidth="240" d:DesignHeight="256"
              x:Class="Mirrack.Views.WeatherModule.IconView"
 			 x:DataType="vm:WeatherModule.IconViewModel">
 
 	<controls:LCorner>
-		<Border  Background="Black" Width="350">
+		<Border  Background="Black" Width="240">
 			<controls:WeatherWidget Icon="{Binding Icon}" Summary="{Binding Summary}" Temperature="{Binding Temperature}" TemperatureHigh="{Binding TemperatureHigh}" TemperatureLow="{Binding TemperatureLow}" PrecipProbability="{Binding PrecipProbability}" WindSpeed="{Binding WindSpeed}" />
 		</Border>
 	</controls:LCorner>

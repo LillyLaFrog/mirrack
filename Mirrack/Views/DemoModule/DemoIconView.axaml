@@ -10,6 +10,6 @@
 
 
 	<controls:LCorner>
-		<Image Margin="16" Source="/Assets/avalonia-logo.ico" MaxHeight="300" MaxWidth="300"></Image>
+		<Image Margin="16" Source="/Assets/settings.png" MaxHeight="300" MaxWidth="300"></Image>
 	</controls:LCorner>
 </UserControl>

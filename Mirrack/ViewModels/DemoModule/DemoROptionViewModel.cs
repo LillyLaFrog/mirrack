@@ -18,9 +18,12 @@ namespace Mirrack.ViewModels.DemoModule
 
         private void OnKeyInput(Key key, bool held)
         {
-            if (key == Key.Right && held)
+            if (IsFocused)
             {
-                AuthModel.Logout();
+                if (key == Key.Right && held)
+                {
+                    AuthModel.Logout();
+                }
             }
         }
     }

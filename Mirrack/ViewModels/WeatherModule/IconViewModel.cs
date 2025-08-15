@@ -36,12 +36,15 @@ namespace Mirrack.ViewModels.WeatherModule
 
         //split up currentWeather to bindable properties
         private string TempUnit { get => "° " + ((CurrentWeather.units == "us") ? 'F' : 'C'); }
-
+        //valid icon strings
+        private readonly string[] Icons = ["clear-day","clear-night","cloudy","error","fog","loading","partly-cloudy-day","partly-cloudy-night","rain","sleet","snow","wind"];
         public IImage Icon
         {
             get
             {
-                var uri = new Uri("avares://Mirrack/Assets/weatherIcons/"+CurrentWeather.icon+".png");
+                //set icon to CurrentWeather.icon if it's an icon listed in Icons, otherwise set it to "error"
+                string icon = CurrentWeather.icon!=null && Icons.Contains(CurrentWeather.icon)?CurrentWeather.icon:"error";
+                var uri = new Uri("avares://Mirrack/Assets/weatherIcons/"+icon+".png");
                 var stream = AssetLoader.Open(uri);
                 return new Bitmap(stream);
             }
@@ -57,22 +60,14 @@ namespace Mirrack.ViewModels.WeatherModule
         public IconViewModel()
         {
 
-            //update current weather on the hour
-            TimeService.HourChanged += UpdateWeather;
-            //init
-            UpdateWeather();
+            //update current weather whenever it changes
+            WeatherModel.CurrentChanged += getWeather;
+            getWeather();
         }
-        private async void UpdateWeather()
+        private void getWeather()
         {
-            //dummy data
-            //CurrentWeather = new WeatherData("uk","fog","foggy!",64.5,88.2,60.0,.99,14);
-            
-            //todo: use an actual idToken
-            WeatherData? data = await WeatherModel.GetWeather();
-            if (data != null)
-            {
-                CurrentWeather = data;
-            }
+            //update current weather
+            CurrentWeather = WeatherModel.Current;
         }
     }
 }
